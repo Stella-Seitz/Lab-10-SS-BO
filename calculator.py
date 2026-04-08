@@ -25,6 +25,13 @@ def logarithm(a,b):
 def exponent(a,b):
     math.pow(a,b)
 
+def square_root(a):
+    return math.sqrt(a)
+
+def hypotenuse(a, b):
+    return math.hypot(a,b)
+
+
 
 
 
