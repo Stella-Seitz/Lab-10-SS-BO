@@ -22,7 +22,7 @@ def div(a, b):
     return b / a
 
 def logarithm(a,b):
-    math.log(a,b)
+    math.log(a, b)
 
 def exp(a, b):
     return a ** b

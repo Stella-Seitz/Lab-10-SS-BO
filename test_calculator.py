@@ -52,5 +52,41 @@ class TestCalculator(unittest.TestCase):
     ##########################
 
 # Do not touch this
+import unittest
+from calculator import add, subtract, mul, div, logarithm, exp
+class TestCalculator(unittest.TestCase):
+    def test_add(self):
+        self.assertEqual(add(1, 2), 3)
+        self.assertEqual(add(-1, 1), 0)
+        self.assertEqual(add(-2, -3), -5)
+        self.assertEqual(add(0, 0), 0)
+
+    def test_subtract(self):
+        self.assertEqual(subtract(5, 3), 2)
+        self.assertEqual(subtract(-1, 1), -2)
+        self.assertEqual(subtract(-5, -3), -2)
+        self.assertEqual(subtract(0, 0), 0)
+
+    def test_divide_by_zero(self):
+        with self.assertRaises(ZeroDivisionError):
+            div(0, 5)
+        self.assertEqual(div(5, 10), 2)
+
+    def test_logarithm(self):
+        self.assertEqual(logarithm(10, 100), 2)
+        self.assertEqual(logarithm(2, 8), 3)
+        self.assertEqual(logarithm(3, 27), 3)
+
+    def test_log_invalid_base(self):
+        with self.assertRaises(ValueError):
+            logarithm(1, 10)
+        with self.assertRaises(ValueError):
+            logarithm(0, 10)
+        with self.assertRaises(ValueError):
+            logarithm(-2, 10)
+        with self.assertRaises(ValueError):
+            logarithm(2, -10)
+        self.assertEqual(logarithm(2, 16), 4)
+
 if __name__ == "__main__":
     unittest.main()
