@@ -1,3 +1,4 @@
+#https://github.com/Stella-Seitz/Lab-10-SS-BO/blob/main/test_calculator.py
 """
 calculator.py
 - Defines functions used to create a simple calculator
@@ -22,7 +23,9 @@ def div(a, b):
     return b / a
 
 def logarithm(a,b):
-    math.log(a, b)
+    if a <= 0 or a == 1 or b <= 0:
+        raise ValueError
+    return math.log(a, b)
 
 def exp(a, b):
     return a ** b
@@ -31,8 +34,9 @@ def square_root(a):
     return math.sqrt(a)
 
 def hypotenuse(a, b):
+    if a <= 0 or b <= 0:
+        raise ValueError
     return math.hypot(a,b)
-
 
 
 
